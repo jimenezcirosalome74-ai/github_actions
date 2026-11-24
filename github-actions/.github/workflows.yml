@@ -1,0 +1,22 @@
+name: Hola-mundo #clave: name \ valor: Hola-mundo
+on:[push] #clave: on \ valor: [push]
+
+
+jobs: #Trabajo o accion que va a realizar 
+   primer-job: #Nombre del job
+    runs-on: ubuntu-latest #clave: runs-on \ valor: ubuntu-latest
+    steps:
+      - name: Descargar el codigo
+        uses: actions/checkout@v3 
+
+      - name: Configurar python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12' 
+
+      - name: Ejecutar codigo 
+        run:  python ejemplo.py
+        
+       
+
+      
